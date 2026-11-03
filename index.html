@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111d34">
+  <meta name="description" content="CodeSphere is a learning studio for C, C++, and computing aptitude, with a local C++ API and SQLite storage.">
+  <title>CodeSphere — Learn with intention</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+      <a class="brand" href="#dashboard" data-view-target="dashboard" aria-label="CodeSphere dashboard">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span class="brand-name">Code<span>Sphere</span><small>LEARNING STUDIO</small></span>
+      </a>
+
+      <div class="workspace-label"><span class="workspace-dot"></span> STUDENT WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main menu">
+        <p class="nav-caption">OVERVIEW</p>
+        <button class="nav-item is-active" type="button" data-view-target="dashboard" aria-current="page">
+          <span class="nav-icon" aria-hidden="true">⌂</span><span>Home</span>
+        </button>
+        <button class="nav-item" type="button" data-view-target="learn">
+          <span class="nav-icon" aria-hidden="true">▤</span><span>Learning paths</span><span class="nav-count">02</span>
+        </button>
+        <button class="nav-item" type="button" data-view-target="aptitude">
+          <span class="nav-icon" aria-hidden="true">◈</span><span>Aptitude practice</span>
+        </button>
+        <p class="nav-caption nav-caption-spaced">YOUR SPACE</p>
+        <button class="nav-item" type="button" data-view-target="progress">
+          <span class="nav-icon" aria-hidden="true">◷</span><span>My progress</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-note">
+        <span class="note-orbit" aria-hidden="true">✳</span>
+        <p class="sidebar-note-title">Small steps add up.</p>
+        <p>Pick one idea. Give it your full attention.</p>
+        <button type="button" class="note-link" data-view-target="learn">Explore a lesson <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="prototype-status" id="backend-status"><span class="status-dot"></span><span id="backend-status-text">C++ backend offline · preview data</span><span class="status-info" title="The backend runs locally on this computer and stores one learner profile in SQLite.">i</span></div>
+      <div class="sidebar-profile">
+        <span class="avatar">CS</span>
+        <span><strong id="profile-label">Student preview</strong><small id="profile-caption">Local prototype</small></span>
+        <span class="profile-menu" aria-hidden="true">···</span>
+      </div>
+    </aside>
+
+    <div class="mobile-scrim" id="mobile-scrim" hidden></div>
+    <div class="app-main">
+      <header class="topbar">
+        <button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><span></span><span></span></button>
+        <div class="topbar-context"><span class="context-mark" aria-hidden="true">CS</span><span>Learning studio</span><span class="context-divider">/</span><strong id="current-section-label">Home</strong></div>
+        <div class="topbar-actions">
+          <span class="topbar-date" id="today-label">A calm place to learn</span>
+          <span class="topbar-divider"></span>
+          <button class="preview-pill" type="button" id="preview-info" aria-label="About this frontend"><span class="status-dot"></span><span id="connection-label">Preview mode</span><span class="preview-chevron">⌄</span></button>
+        </div>
+      </header>
+
+      <main id="main-content" class="main-content">
+        <section class="view is-visible" id="view-dashboard" aria-labelledby="dashboard-title">
+          <div class="welcome-row">
+            <div><p class="eyebrow"><span class="eyebrow-line"></span><span id="date-eyebrow">YOUR LEARNING SPACE</span></p><h1 id="dashboard-title">A little progress,<br><em>every day.</em></h1><p class="welcome-copy">A focused place to build your C and C++ foundations, one idea at a time.</p></div>
+            <div class="welcome-actions"><button class="button button-dark" type="button" data-view-target="learn">Continue learning <span aria-hidden="true">↗</span></button><button class="button button-light" type="button" data-view-target="aptitude">Try a quick practice</button></div>
+          </div>
+
+          <section class="feature-banner" aria-labelledby="feature-title">
+            <div class="feature-copy">
+              <span class="feature-label"><span class="sparkle" aria-hidden="true">✳</span> YOUR NEXT GOOD IDEA</span>
+              <h2 id="feature-title">Functions make<br>good code <em>flow.</em></h2>
+              <p>Understand how to give a task a name, pass it what it needs, and get a result back.</p>
+              <div class="feature-meta"><span class="language-chip">C</span><span>Lesson 04</span><span class="meta-dot">·</span><span>12 min</span></div>
+              <button class="feature-link" type="button" data-open-lesson="c-functions">Open this lesson <span aria-hidden="true">→</span></button>
+            </div>
+            <div class="feature-art" aria-hidden="true">
+              <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-orbit orbit-three"></div>
+              <div class="code-card">
+                <div class="code-top"><span class="code-window-dots"><i></i><i></i><i></i></span><span>functions.c</span><span class="code-lock">●</span></div>
+                <div class="code-lines"><span class="line-no">01</span><code><b>#include</b> &lt;stdio.h&gt;</code><span class="line-no">02</span><code><i>int</i> <strong>add</strong>(<i>int</i> a, <i>int</i> b) {</code><span class="line-no">03</span><code class="indent">return a + b;</code><span class="line-no">04</span><code>}</code><span class="line-no">05</span><code><small>// one clear job</small></code></div>
+              </div>
+              <div class="art-chip chip-top"><span class="chip-spark">✦</span><span><small>CONCEPT</small><strong>Reusable logic</strong></span></div>
+              <div class="art-chip chip-bottom"><span class="chip-check">✓</span><span><small>FOUNDATION</small><strong>Built one step at a time</strong></span></div>
+              <span class="art-star star-a">✳</span><span class="art-star star-b">·</span>
+            </div>
+            <div class="feature-bottom"><span>01 <i>/</i> 08&nbsp; · &nbsp;C FOUNDATIONS</span><span class="feature-progress"><i></i></span><span>12 min</span></div>
+          </section>
+
+          <div class="section-heading"><div><p class="eyebrow">A THOUGHTFUL START</p><h2>Your learning, at a glance</h2></div><span class="sample-tag" id="dashboard-data-tag"><span class="sample-dot"></span> Sample preview data</span></div>
+          <div class="snapshot-grid">
+            <article class="snapshot-card snapshot-progress"><div class="snapshot-top"><span class="snapshot-icon gold-icon">◒</span><span class="card-kicker">LEARNING PATH</span><span class="card-arrow" aria-hidden="true">↗</span></div><strong class="snapshot-value" id="dashboard-progress-value">68<span>%</span></strong><p id="dashboard-progress-caption">Sample curriculum progress</p><div class="thin-progress"><i id="dashboard-progress-bar" style="width:68%"></i></div><small id="dashboard-progress-note">Illustrative value · not saved</small></article>
+            <article class="snapshot-card"><div class="snapshot-top"><span class="snapshot-icon sage-icon">✳</span><span class="card-kicker">PRACTICE THIS WEEK</span><span class="card-arrow" aria-hidden="true">↗</span></div><strong class="snapshot-value" id="dashboard-quiz-count">04<span class="value-unit"> sessions</span></strong><p id="dashboard-quiz-caption">Example activity count</p><div class="mini-bars" id="dashboard-week-bars" aria-label="Illustrative weekly activity"><i style="height:28%"></i><i style="height:52%"></i><i style="height:38%"></i><i style="height:73%"></i><i style="height:47%"></i><i style="height:87%"></i><i class="bar-today" style="height:61%"></i></div><small id="dashboard-quiz-note">Example week · local only</small></article>
+            <article class="snapshot-card snapshot-streak"><div class="snapshot-top"><span class="snapshot-icon navy-icon">✦</span><span class="card-kicker">A GENTLE REMINDER</span></div><strong class="streak-title">One concept<br>at a time.</strong><p>Your pace is the right pace.</p><button class="text-link" type="button" data-view-target="aptitude">Begin a practice <span aria-hidden="true">→</span></button></article>
+          </div>
+
+          <div class="section-heading learning-heading"><div><p class="eyebrow">CHOOSE YOUR DIRECTION</p><h2>Learning paths</h2></div><button class="text-link" type="button" data-view-target="learn">View all paths <span aria-hidden="true">→</span></button></div>
+          <div class="path-grid">
+            <article class="path-card path-c"><div class="path-art"><span class="path-letter">C</span><span class="path-art-caption">FOUNDATIONS</span><span class="path-orbit"></span></div><div class="path-body"><div class="path-topline"><span class="path-label">PROGRAMMING</span><span class="difficulty">BEGINNER</span></div><h3>C Foundations</h3><p>Build a clear mental model of variables, control flow, functions, and memory.</p><div class="path-foot"><span>8 modules <i>·</i> 2.5 hours</span><button type="button" data-course-select="c">Explore <span aria-hidden="true">→</span></button></div></div></article>
+            <article class="path-card path-cpp"><div class="path-art"><span class="path-letter">C<span>++</span></span><span class="path-art-caption">MODERN THINKING</span><span class="path-orbit"></span></div><div class="path-body"><div class="path-topline"><span class="path-label">PROGRAMMING</span><span class="difficulty">BEGINNER →</span></div><h3>C++ Essentials</h3><p>Meet objects, useful standard library tools, and the habits of modern C++.</p><div class="path-foot"><span>10 modules <i>·</i> 3 hours</span><button type="button" data-course-select="cpp">Explore <span aria-hidden="true">→</span></button></div></div></article>
+            <article class="path-card path-aptitude"><div class="path-art"><span class="aptitude-glyph">◈</span><span class="path-art-caption">THINKING PRACTICE</span><span class="path-orbit"></span></div><div class="path-body"><div class="path-topline"><span class="path-label">COMPUTING APTITUDE</span><span class="difficulty">PRACTICE</span></div><h3>Reasoning &amp; Logic</h3><p>Build confidence with patterns, number sense, and foundational computer concepts.</p><div class="path-foot"><span>4 topic areas <i>·</i> short sets</span><button type="button" data-view-target="aptitude">Explore <span aria-hidden="true">→</span></button></div></div></article>
+          </div>
+          <p class="prototype-footnote" id="dashboard-boundary-note">This is a browser-only preview until the C++ service is started. Example values are not saved.</p>
+        </section>
+
+        <section class="view" id="view-learn" aria-labelledby="learn-title" hidden>
+          <div class="page-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span>LEARNING PATHS</p><h1 id="learn-title">Learn with <em>intention.</em></h1><p>Start with the building blocks. Add a new idea when the last one feels familiar.</p></div><span class="page-heading-mark" aria-hidden="true">✳</span></div>
+          <div class="course-switcher" role="tablist" aria-label="Choose a learning path"><button class="course-tab is-selected" type="button" role="tab" aria-selected="true" aria-controls="course-panel" data-course="c">C Foundations <span>C</span></button><button class="course-tab" type="button" role="tab" aria-selected="false" aria-controls="course-panel" data-course="cpp">C++ Essentials <span>C++</span></button></div>
+          <section class="course-overview" id="course-panel" role="tabpanel" tabindex="0" aria-labelledby="course-title">
+            <div class="course-overview-copy"><span class="course-overview-label" id="course-level">THE FOUNDATIONS</span><h2 id="course-title">A clear start with C.</h2><p id="course-description">Learn how a program moves: from values and decisions to functions and memory. Each lesson is short, focused, and built around one useful idea.</p><div class="course-stats"><span><b id="course-module-count">8</b> modules</span><span><b id="course-duration">2.5h</b> estimated time</span><span><b>Beginner</b> level</span></div></div>
+            <div class="course-orbit" aria-hidden="true"><span class="orbit-ring ring-outer"></span><span class="orbit-ring ring-middle"></span><span class="orbit-ring ring-inner"></span><span class="orbit-core">C<span>+</span></span><span class="orbit-label orbit-label-one">IDEAS</span><span class="orbit-label orbit-label-two">PRACTICE</span></div>
+          <div class="course-notice"><span class="notice-icon">i</span><span id="course-content-note">Lesson content below is sample learning material until the C++ API is started.</span></div>
+          </section>
+          <div class="module-toolbar"><div><p class="eyebrow">THE CURRICULUM</p><h2>Your modules</h2></div><span class="module-count-label" id="module-count-label">01 — 08</span></div>
+          <div class="lesson-layout"><div class="lesson-list" id="lesson-list" aria-label="Course modules"></div>
+            <aside class="lesson-panel" id="lesson-panel" aria-live="polite"><div class="lesson-panel-empty"><span class="panel-mark">✳</span><p class="eyebrow">A NOTE TO BEGIN</p><h3>Make room for curiosity.</h3><p>Choose a module to see its focus, a small code example, and a short explanation.</p></div><div class="lesson-detail" id="lesson-detail" hidden><div class="lesson-detail-top"><span class="language-chip" id="lesson-language">C</span><span class="lesson-duration" id="lesson-duration">12 min</span></div><p class="eyebrow" id="lesson-kicker">MODULE 04</p><h3 id="lesson-detail-title">Function fundamentals</h3><p id="lesson-detail-copy"></p><pre class="lesson-code"><code id="lesson-detail-code"></code></pre><p class="lesson-explanation" id="lesson-explanation"></p><button class="button button-dark lesson-complete" id="lesson-complete" type="button">Mark complete</button><small class="local-only-note" id="lesson-state-note">Preview marks are temporary and clear when the page reloads.</small></div></aside>
+          </div>
+          <p class="prototype-footnote">Code examples are educational previews. This page does not compile or run C/C++ code.</p>
+        </section>
+
+        <section class="view" id="view-aptitude" aria-labelledby="aptitude-title" hidden>
+          <div class="page-heading aptitude-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span>COMPUTING APTITUDE</p><h1 id="aptitude-title">Think a little <em>deeper.</em></h1><p>Short, low-pressure practice for the reasoning behind good computing.</p></div><div class="practice-stamp"><span>✳</span><small>TAKE YOUR<br>TIME</small></div></div>
+          <section class="practice-feature"><div><p class="eyebrow light-eyebrow">A DAILY MOMENT OF FOCUS</p><h2>Five questions.<br><em>A fresh perspective.</em></h2><p>A mixed set to warm up your number sense, logic, and computing fundamentals.</p><button class="button button-gold" type="button" data-start-quiz="daily">Begin the daily practice <span aria-hidden="true">→</span></button><small id="practice-mode-note">When the C++ API is running, attempts are graded by the server and saved to SQLite.</small></div><div class="practice-art" aria-hidden="true"><span class="practice-ring ring-a"></span><span class="practice-ring ring-b"></span><span class="practice-ring ring-c"></span><span class="practice-number">05<small>QUESTIONS</small></span><span class="practice-star">✳</span><span class="practice-orbit-dot"></span></div></section>
+          <div class="section-heading topic-heading"><div><p class="eyebrow">PICK A TOPIC</p><h2>Practice what interests you</h2></div><span class="sample-tag" id="aptitude-data-tag"><span class="sample-dot"></span> Sample question sets</span></div>
+          <div class="topic-grid">
+            <article class="topic-card topic-numbers"><div class="topic-card-top"><span class="topic-icon">∑</span><span class="topic-time">4 questions · ~5 min</span></div><p class="eyebrow">NUMBER SENSE</p><h3>Numerical reasoning</h3><p>Work with patterns, ratios, and the little shortcuts that make numbers clearer.</p><button type="button" data-start-quiz="numerical">Start a set <span aria-hidden="true">→</span></button></article>
+            <article class="topic-card topic-logic"><div class="topic-card-top"><span class="topic-icon">⟡</span><span class="topic-time">4 questions · ~5 min</span></div><p class="eyebrow">CLEAR THINKING</p><h3>Logical patterns</h3><p>Look for relationships, sequences, and the rule hidden in plain sight.</p><button type="button" data-start-quiz="logic">Start a set <span aria-hidden="true">→</span></button></article>
+            <article class="topic-card topic-computing"><div class="topic-card-top"><span class="topic-icon">⌘</span><span class="topic-time">4 questions · ~5 min</span></div><p class="eyebrow">COMPUTING BASICS</p><h3>Computer fundamentals</h3><p>Practice core ideas about data, hardware, and how computers represent information.</p><button type="button" data-start-quiz="computing">Start a set <span aria-hidden="true">→</span></button></article>
+            <article class="topic-card topic-code"><div class="topic-card-top"><span class="topic-icon">&lt;/&gt;</span><span class="topic-time">4 questions · ~5 min</span></div><p class="eyebrow">TRACE THE IDEA</p><h3>C &amp; C++ output tracing</h3><p>Read a short snippet and reason carefully about what it will print.</p><button type="button" data-start-quiz="code">Start a set <span aria-hidden="true">→</span></button></article>
+          </div>
+          <p class="prototype-footnote" id="aptitude-boundary-note">When the C++ API is offline, the sample practice runs locally and is not saved.</p>
+        </section>
+
+        <section class="view" id="view-quiz" aria-labelledby="quiz-page-title" hidden>
+          <div class="quiz-topline"><button class="back-link" type="button" data-view-target="aptitude"><span aria-hidden="true">←</span> Back to practice</button><span class="quiz-mode"><span class="status-dot"></span><span id="quiz-mode-label">LOCAL PRACTICE SESSION</span></span></div>
+          <div class="quiz-shell" id="quiz-shell">
+            <div class="quiz-content" id="quiz-content">
+              <div class="quiz-heading"><div><p class="eyebrow" id="quiz-topic-label">DAILY PRACTICE</p><h1 id="quiz-page-title">A moment to think.</h1></div><div class="quiz-time"><span class="clock-icon">◷</span><span id="quiz-time-label">Untimed</span></div></div>
+              <div class="quiz-progress-row"><span id="quiz-step-label">QUESTION 01 <i>/</i> 05</span><span id="quiz-progress-percent">20%</span></div><div class="quiz-progress-track"><i id="quiz-progress-fill"></i></div>
+              <div class="question-area"><p class="question-number" id="question-number">QUESTION 01</p><h2 id="question-prompt">Loading your question…</h2><div class="answer-list" id="answer-list" role="group" aria-label="Answer choices"></div></div>
+              <div class="quiz-footer"><span class="keyboard-hint"><kbd>1</kbd>–<kbd>4</kbd> select an answer</span><button class="button button-dark" type="button" id="quiz-next" disabled>Continue <span aria-hidden="true">→</span></button></div>
+              <p class="local-only-note quiz-local-note" id="quiz-boundary-note">Local preview: answers and score stay in this tab; nothing is saved.</p>
+            </div>
+            <aside class="quiz-aside"><div class="quiz-aside-orbit" aria-hidden="true">✳</div><p class="eyebrow">A KIND REMINDER</p><h3>Take the time<br>you need.</h3><p>This is practice, not a race. Read each question once, then trust your reasoning.</p><div class="quiz-aside-rule"></div><span class="quiz-aside-count"><b id="quiz-aside-total">05</b> thoughtful questions</span></aside>
+            <div class="quiz-results" id="quiz-results" hidden></div>
+          </div>
+        </section>
+
+        <section class="view" id="view-progress" aria-labelledby="progress-title" hidden>
+          <div class="page-heading progress-page-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span>YOUR PROGRESS</p><h1 id="progress-title">Notice how far<br><em>you've come.</em></h1><p>Learning is a collection of small moments. Take a look at the shape of yours.</p></div><div class="progress-heading-note"><span class="note-ring">✳</span><span>Curiosity is<br>its own reward.</span></div></div>
+          <div class="data-boundary" id="progress-boundary"><span class="boundary-icon">i</span><p><strong>Illustrative sample view.</strong> These figures are example content; start the local C++ API to use SQLite-backed progress.</p></div>
+          <div class="progress-summary-grid"><article class="progress-stat"><span class="card-kicker" id="progress-course-label">SAMPLE CURRICULUM</span><strong id="progress-course-value">68<span>%</span></strong><p id="progress-course-caption">Example path completion</p><div class="thin-progress"><i id="progress-course-bar" style="width:68%"></i></div></article><article class="progress-stat"><span class="card-kicker" id="progress-lessons-label">SAMPLE LESSONS</span><strong id="progress-lessons-value">12<span class="value-unit"> / 18</span></strong><p id="progress-lessons-caption">Illustrative completed count</p><span class="stat-icon stat-icon-gold">✦</span></article><article class="progress-stat"><span class="card-kicker">THIS VISIT</span><strong id="visit-completed-count">00</strong><p id="visit-completed-caption">Lessons marked in this tab</p><span class="stat-icon stat-icon-sage">✓</span></article></div>
+          <div class="progress-content-grid"><section class="activity-card"><div class="panel-heading"><div><p class="eyebrow" id="activity-kicker">A SAMPLE WEEK</p><h2 id="activity-title">Quiz attempts this week</h2></div><span class="week-label" id="activity-scope">ILLUSTRATIVE</span></div><div class="chart-area" role="img" aria-label="Illustrative weekly quiz attempts" id="weekly-chart"><div class="chart-y-labels"><span>6</span><span>4</span><span>2</span><span>0</span></div><div class="chart-plot"><div class="chart-gridline line-60"></div><div class="chart-gridline line-40"></div><div class="chart-gridline line-20"></div><div class="chart-columns" id="weekly-chart-columns"><div><i style="height:28%"></i><span>SUN</span></div><div><i style="height:48%"></i><span>MON</span></div><div><i style="height:35%"></i><span>TUE</span></div><div><i style="height:70%"></i><span>WED</span></div><div><i style="height:43%"></i><span>THU</span></div><div><i style="height:84%"></i><span>FRI</span></div><div><i class="chart-muted-bar" style="height:22%"></i><span>SAT</span></div></div></div></div><p class="chart-caption" id="weekly-chart-caption"><span class="chart-legend"></span> Example activity · not saved</p></section>
+            <section class="milestone-card"><div class="panel-heading"><div><p class="eyebrow">YOUR NEXT MILESTONE</p><h2>Keep the rhythm gentle.</h2></div></div><div class="milestone-art" aria-hidden="true"><span class="milestone-ring ring-large"></span><span class="milestone-ring ring-small"></span><span class="milestone-center">✳</span><span class="milestone-orbit-dot"></span></div><p class="milestone-caption">Complete any lesson to see a temporary marker for this visit.</p><button class="text-link" type="button" data-view-target="learn">Return to learning <span aria-hidden="true">→</span></button></section></div>
+          <div class="progress-next-step"><span class="next-icon">✦</span><div><p class="eyebrow">A GOOD NEXT STEP</p><h2>Make one concept yours.</h2><p>Return to the learning paths and choose the idea you want to understand today.</p></div><button class="button button-dark" type="button" data-view-target="learn">Explore a lesson <span aria-hidden="true">→</span></button></div>
+        </section>
+      </main>
+      <footer class="app-footer"><span>CodeSphere <i>·</i> Learning Studio</span><span>Frontend prototype <i>·</i> No backend connected</span></footer>
+    </div>
+  </div>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
